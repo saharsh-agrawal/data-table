@@ -7,7 +7,8 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: resolve(__dirname, "src/index.js"),
-			name: "@saharsh-agrawal/data-table",
+			name: "DataTable",
+			formats: ["es"],
 			fileName: "index",
 		},
 		rollupOptions: {
