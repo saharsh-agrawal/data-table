@@ -1,6 +1,6 @@
 {
 	"name": "@saharsh-agrawal/data-table",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "A highly customizable React DataTable component with plugin support.",
 	"type": "module",
 	"main": "./dist/index.umd.js",
@@ -17,7 +17,8 @@
 		"dev": "vite",
 		"build": "vite build",
 		"lint": "eslint .",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"publish": "vite build && npm version patch && npm publish --access public"
 	},
 	"peerDependencies": {
 		"react": "^18 || ^19",
