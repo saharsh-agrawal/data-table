@@ -1,9 +1,9 @@
 {
 	"name": "@saharsh-agrawal/data-table",
-	"version": "1.0.5",
+	"version": "1.0.7",
 	"description": "A highly customizable React DataTable component with plugin support.",
 	"type": "module",
-	"main": "./dist/index.umd.js",
+	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"exports": {
 		".": "./dist/index.js"
@@ -14,26 +14,24 @@
 		"LICENSE"
 	],
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
+		"build": "tsup src/index.js --format esm --external react,react-dom,react-bootstrap --clean",
 		"lint": "eslint .",
-		"preview": "vite preview",
-		"publish": "vite build && npm version patch && npm publish --access public"
+		"publish": "npm run build && npm version patch && npm publish --access public"
 	},
 	"peerDependencies": {
 		"react": "^18 || ^19",
-		"react-dom": "^18 || ^19",
-		"react-bootstrap": "^2"
+		"react-bootstrap": "^2",
+		"react-dom": "^18 || ^19"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@types/react": "^19.2.17",
 		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^6.0.3",
 		"eslint": "^10.6.0",
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"eslint-plugin-react-refresh": "^0.5.3",
 		"globals": "^17.7.0",
-		"vite": "^8.1.1"
+		"tsup": "^8.5.1",
+		"typescript": "^7.0.2"
 	}
 }
