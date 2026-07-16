@@ -1,6 +1,6 @@
 {
 	"name": "@saharsh-agrawal/data-table",
-	"version": "1.0.7",
+	"version": "1.0.9",
 	"description": "A highly customizable React DataTable component with plugin support.",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -16,7 +16,7 @@
 	"scripts": {
 		"build": "tsup src/index.js --format esm --external react,react-dom,react-bootstrap --clean",
 		"lint": "eslint .",
-		"publish": "npm run build && npm version patch && npm publish --access public"
+		"build-and-publish": "npm run build && npm version patch && npm publish --access public"
 	},
 	"peerDependencies": {
 		"react": "^18 || ^19",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Form, Modal, Spinner } from "react-bootstrap";
 
 function buildInitialFieldStates(fields) {
@@ -181,14 +181,20 @@ export default function useBulkEditPlugin({
 			</div>
 		),
 		renderOverlay: () => (
-			<Modal show={showModal} onHide={closeModal} size="lg" centered scrollable>
+			<Modal
+				show={showModal}
+				onHide={closeModal}
+				size="lg"
+				centered
+				scrollable
+			>
 				<Modal.Header closeButton>
 					<Modal.Title>{title}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<p className="text-muted">
-						Check the fields you want to overwrite. Checked fields can
-						be updated to empty values if needed.
+						Check the fields you want to overwrite. Checked fields
+						can be updated to empty values if needed.
 					</p>
 					<div
 						style={{
@@ -211,7 +217,9 @@ export default function useBulkEditPlugin({
 								<Form.Check
 									type="checkbox"
 									label={field.label}
-									checked={fieldStates[field.key]?.checked ?? false}
+									checked={
+										fieldStates[field.key]?.checked ?? false
+									}
 									onChange={(e) => {
 										setFieldStates({
 											...fieldStates,
@@ -224,7 +232,8 @@ export default function useBulkEditPlugin({
 								/>
 								{field.renderInput ? (
 									field.renderInput({
-										value: fieldStates[field.key]?.value ?? "",
+										value:
+											fieldStates[field.key]?.value ?? "",
 										onChange: (nextValue) => {
 											setFieldStates({
 												...fieldStates,
@@ -238,7 +247,9 @@ export default function useBulkEditPlugin({
 								) : field.options ? (
 									<Form.Select
 										size="sm"
-										value={fieldStates[field.key]?.value ?? ""}
+										value={
+											fieldStates[field.key]?.value ?? ""
+										}
 										onChange={(e) => {
 											setFieldStates({
 												...fieldStates,
@@ -262,7 +273,9 @@ export default function useBulkEditPlugin({
 									<Form.Control
 										size="sm"
 										type={field.type || "text"}
-										value={fieldStates[field.key]?.value ?? ""}
+										value={
+											fieldStates[field.key]?.value ?? ""
+										}
 										onChange={(e) => {
 											setFieldStates({
 												...fieldStates,

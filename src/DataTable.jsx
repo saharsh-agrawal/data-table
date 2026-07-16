@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import {
 	Table,
 	Pagination,
@@ -6,7 +7,6 @@ import {
 	Button,
 	Form,
 } from "react-bootstrap";
-import { useEffect } from "react";
 
 export default function DataTable(props) {
 	const {
